@@ -10,6 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
+
+// Roteamento endereçado e encadeado.
 app.use("/api", itemsR);
 
 // Default endpoint /
@@ -17,7 +19,7 @@ app.get("/", (req, res) => {
   res.send("Welcome!");
 });
 
-// Default response
+//Qualquer rota nao tratada.
 app.use((req, res) => {
   res.status(404);
 });

@@ -20,7 +20,7 @@ const database = new sqlite3.Database(DBSOURCE, (err) => {
     console.log("Database connected.");
     database.run(DDL_SCRIPT, (err) => {
       if (err) {
-        console.log("Table items has been created.");
+        console.log("Table items already exists.");
       } else {
         console.log("Table items created.");
       }
